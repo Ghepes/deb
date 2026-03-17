@@ -21,6 +21,14 @@ dpkg-deb -b folder_new/ xzy_wromo_1.2.3-1+clp-xzy_all.deb
 ___
 
 # Other comments
+Start new secret key
+````
+gpg --gen-key
+````
+Export the generate key to key.gpg
+````
+gpg --armor --export xyz@example.com > key.gpg
+````
 write a key.gpg file to a protected folder `depends on the case`
 ````
 gpg --armor --export xyz@example.com | sudo tee key.gpg > /dev/null
