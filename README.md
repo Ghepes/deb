@@ -63,7 +63,7 @@ sha256sum xyz.sh
 ___
 
 # Generate NEW Hash in the project
-___
+# Global execution for generation and signing
 # in more complex project situations the following code _ Terminal
 ````
 # 1. UPDATE THE .gz ARCHIVES (This solves the "Hash Sum mismatch" error)
@@ -113,6 +113,12 @@ gpg --default-key xyz@example.com --clearsign -o InRelease Release
 
 # Generate the Release.gpg file
 gpg --default-key xyz@example.com -abs -o Release.gpg Release
+````
+
+
+# Replace text "Packages" in all Packages files (Automatic)
+````
+find . -type f -name "Packages" -exec sed -i 's/PackName/NewPackName/g' {} +
 ````
 
 ___
