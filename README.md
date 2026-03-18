@@ -6,6 +6,7 @@ Debian files terminal commands
 ````
 sudo apt update
 sudo apt install dpkg-dev apt-utils gnupg -y
+sudo apt install dpkg-dev fakeroot -y
 ````
 
 # opening the deb file
