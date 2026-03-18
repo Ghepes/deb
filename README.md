@@ -106,4 +106,13 @@ done
 
 ````
 
+# or separately digital signature (Seal)
+````
+# We generate the InRelease file
+gpg --default-key xyz@example.com --clearsign -o InRelease Release
+
+# Generate the Release.gpg file
+gpg --default-key xyz@example.com -abs -o Release.gpg Release
+````
+
 ___
