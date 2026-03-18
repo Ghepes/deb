@@ -34,7 +34,7 @@ write a key.gpg file to a protected folder `depends on the case`
 gpg --armor --export xyz@example.com | sudo tee key.gpg > /dev/null
 ````
 
-from your key.gpg edit menu
+RE-editing your key:
 ````
 gpg --edit-key xyz@example.com
 ````
