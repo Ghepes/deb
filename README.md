@@ -123,3 +123,18 @@ find . -type f -name "Packages" -exec sed -i 's/PackName/NewPackName/g' {} +
 ````
 
 ___
+
+# Recalculated md5sums DEBIAN/control file
+After changes or modifications to the DEBIAN/control file, the old inventory in md5sums is completely invalid (so their mathematical signatures have changed and need to be recalculated again).
+````
+find . -type f ! -path "./DEBIAN/*" -exec md5sum {} + | sed 's|^\./||' > DEBIAN/md5sums
+````
+find . -type f: Search all files in this directory.
+! -path "./DEBIAN/*": Ignore the DEBIAN folder (we don't want the inventory to inventory itself or the instructions).
+-exec md5sum {} +: Calculates the MD5 signature for each file found.
+sed 's|^\./||': Clean up the resulting text by cutting out unnecessary characters (./) from the beginning of each line to make it look professional.
+> DEBIAN/md5sums: Take this whole huge table and save/overwrite it in the final md5sums file.
+___
+
+
+
