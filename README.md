@@ -1,7 +1,7 @@
 # deb
 Debian files terminal commands
 
-Rewriting .deb packages logic
+## Rewriting .deb packages logic
 # install PACKAGES
 ````
 sudo apt update
